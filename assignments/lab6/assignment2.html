@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typewriter Effect</title>
+</head>
+<body>
+    
+    <script>
+        var popup = window.open("", "typewriter", "width=300,height=200");
+        
+        var message = "welcome to js";
+        var currentIndex = 0;
+
+        var typingTimer = setInterval(function () {
+            popup.document.write(message[currentIndex]);
+            currentIndex++;
+
+            if (currentIndex === message.length) {
+                clearInterval(typingTimer); 
+                setTimeout(function () {
+                    popup.close(); 
+                }, 1000);
+            }
+        }, 300); 
+    </script>
+</body>
+</html>

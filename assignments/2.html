@@ -1,0 +1,97 @@
+<html>
+    <head>
+        <title>Lab part 1</title>
+    </head>
+    <body>
+        <script>
+            var number = [3, 1, 2, 4, 5, 1];
+            var removeDup = [];
+
+            for (var i = 0; i < number.length; i++) {
+                if (removeDup.indexOf(number[i]) === -1) {
+                    removeDup.push(number[i]);
+                }
+            }
+
+            console.log("remove duplicate items", removeDup);
+
+            removeDup.sort(function (a, b) {
+                return a - b;
+            });
+            console.log("Sort them ascending", removeDup);
+
+            
+            function filterGreaterThan50(arr) {
+                var result = [];
+                for (var i = 0; i < arr.length; i++) {
+                    if (arr[i] > 50) {
+                        result.push(arr[i]);
+                    }
+                }
+                return result;
+            }
+
+            console.log("Filter numbers larger than 50 (user):", filterGreaterThan50(removeDup));
+
+            
+            var filtered = removeDup.filter(function (n) {
+                return n > 50;
+            });
+            console.log("Built-in Filter > 50:", filtered);
+
+            
+            function getMaxMin(arr) {
+                var max = arr[0];
+                var min = arr[0];
+                for (var i = 1; i < arr.length; i++) {
+                    if (arr[i] > max)
+                        max = arr[i];
+                    if (arr[i] < min)
+                        min = arr[i];
+                }
+                console.log("User Max:", max, "Min:", min);
+            }
+
+            
+            getMaxMin(removeDup);
+
+
+
+
+            function sumAllArgs(){
+                var arr = [];
+                for (var i = 0; i < arguments.length; i++){
+                    arr.push(arguments[i]);
+
+                }
+                var sum = eval(arr.join('+'));
+                var product = eval(arr.join('*'));
+                console.log("argument sum :", sum, "product :", product );
+            }
+            sumAllArgs(3, 1, 4, 5, 2);
+
+
+            function getrandomarray(){
+                var pool = [1,2,3,4,5,6,7,8,9,10];
+                var result = [];
+
+                for(var i = 0; i < 8; i++){
+                    var index = Math.floor(Math.random() * pool.length);
+                    result.push(pool[index]);
+                    pool.splice(index , 1);
+                }
+
+                return result;
+            }
+
+            var randomArry = getrandomarray();
+            console.log(" returns  random array of numbers between 1:10 :", randomArry);
+
+
+
+
+
+
+        </script>
+    </body>
+</html>

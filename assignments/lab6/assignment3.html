@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamic Counter</title>
+</head>
+<body>
+    <script>
+        var counter = 0;
+
+        setInterval(function () {
+            counter++;
+            document.title = "Count: " + counter;
+            document.write("<p style='border: 3px solid red; margin: 8px; padding: 10px; width:fit-content ; background-color: lightgray;'>" + counter + "</p>");
+        }, 1500);
+
+
+    </script>
+
+</body>
+</html>
